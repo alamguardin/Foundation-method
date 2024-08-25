@@ -1,0 +1,19 @@
+:root {
+	/* Pallete */
+	--zinc-950: #09090b;
+	--zinc-900: #18181b;
+	--zinc-800: #27272a;
+	--zinc-300: #d4d4d8;
+	--zinc-50: #fafafa;
+    /* Default styles */
+	font-family: 'Satoshi', sans-serif;
+	font-size: 16px;
+	background: var(--zinc-950);
+	color: var(--zinc-50);
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}

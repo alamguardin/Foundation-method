@@ -1,0 +1,82 @@
+/* Container styles */
+.container {
+	position: relative;
+	margin: auto;
+	max-width: 800px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Choose character popup */
+.choose__character {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--zinc-900);
+	padding: 1.25rem 2.5rem;
+	border-radius: 0.625rem;
+	box-shadow: 0 0 60px 40px #000;
+}
+
+.choose__character.active {
+	display: block;
+}
+
+.choose__character-actions {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.choose__character-btn {
+	width: 3rem;
+	height: 3rem;
+	padding: 0.5rem;
+	background: var(--zinc-950);
+	color: var(--zinc-50);
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+/* Ranking Card */
+.ranking {
+	margin-top: 1rem;
+	display: flex;
+	gap: 1.5rem;
+	font-size: 18px;
+}
+
+/* Turn */
+.turn {
+	color: var(--zinc-300);
+	margin-top: 3rem;
+}
+
+/* Board Game */
+.board {
+	margin-top: 0.5rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border: 1px solid var(--zinc-900);
+}
+
+.board-item {
+	width: 4rem;
+	height: 4rem;
+	padding: 0.5rem;
+	border: 1px solid var(--zinc-900);
+	color: var(--zinc-300);
+	cursor: pointer;
+}
+
+.board-item:hover {
+	background: var(--zinc-900);
+}
