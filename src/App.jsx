@@ -20,6 +20,18 @@ function App() {
   const [winner, setWinner ] = useState(null)
   const [ranking, setRanking] = useState({x: 0, o: 0})
 
+  const updateRanking = () => {
+    if (winner !== null) {
+      if (winner === 'x') {
+        setRanking({...ranking, x: ranking.x + 1})
+      } else if (winner === 'o') {
+        setRanking({...ranking, o: ranking.o + 1})
+      }
+      setWinner(null)
+      setBoard(new Array(9).fill(null))
+    }
+  }
+
   const checkWinner = (board) => {
     let isWinner = null
     winningCombination.forEach(combination => {
@@ -30,7 +42,9 @@ function App() {
       if (isEqualToX) { isWinner = 'x' }
       if (isEqualToO) { isWinner = 'o' }
     })
-    setWinner(isWinner)
+
+    if (isWinner !== null) setWinner(isWinner)
+
     return isWinner
   }
 
@@ -46,7 +60,8 @@ function App() {
 
   useEffect(() => {
    checkWinner(board)
-  }, [board])
+   updateRanking()
+  }, [board, winner])
 
   return (
     <div className='container'>
