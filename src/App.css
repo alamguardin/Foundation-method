@@ -80,3 +80,17 @@
 .board-item:hover {
 	background: var(--zinc-900);
 }
+
+/* Restart button */
+.restart__btn {
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	background: var(--zinc-50);
+	color: var(--zinc-950);
+	cursor: pointer;
+}
+
+.restart__btn:active {
+	transform: scale(0.9);
+}

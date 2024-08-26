@@ -58,6 +58,10 @@ function App() {
     }
   }
 
+  const handleRestartBoard = () => {
+    setBoard(new Array(9).fill(null))
+  }
+
   useEffect(() => {
    checkWinner(board)
    updateRanking()
@@ -98,6 +102,7 @@ function App() {
           })
         }
       </div>
+      <button className='restart__btn' onClick={handleRestartBoard}>Restart Board</button>
     </div>
   )
 }
