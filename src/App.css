@@ -85,8 +85,8 @@
 	background: var(--zinc-900);
 }
 
-/* Restart button */
-.restart__btn {
+/* Restart button and continue button */
+.restart__btn, .winner-btn {
 	margin-top: 1rem;
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
@@ -95,7 +95,7 @@
 	cursor: pointer;
 }
 
-.restart__btn:active {
+.restart__btn:active, .winner-btn:active {
 	transform: scale(0.9);
 }
 
@@ -103,4 +103,23 @@
 .players {
 	margin-top: 1rem;
 	color: var(--zinc-300);
+}
+
+/* Winner Popup */
+.winner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--zinc-900);
+	padding: 1.25rem 2.5rem;
+	border-radius: 0.625rem;
+	box-shadow: 0 0 60px 40px #000;
+}
+
+.winner-title::first-letter {
+	text-transform: uppercase;
 }

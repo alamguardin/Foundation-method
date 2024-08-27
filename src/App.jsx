@@ -28,8 +28,6 @@ function App() {
       } else if (winner === 'o') {
         setRanking({...ranking, o: ranking.o + 1})
       }
-      setWinner(null)
-      setBoard(new Array(9).fill(null))
     }
   }
 
@@ -67,6 +65,11 @@ function App() {
     setPlayer(player)
   }
 
+  const handleContinueGame = () => {
+    setWinner(null)
+    setBoard(new Array(9).fill(null))
+  }
+
   useEffect(() => {
    checkWinner(board)
    updateRanking()
@@ -75,6 +78,13 @@ function App() {
   return (
     <div className='container'>
       <h1 className='heading'>Tic Tac Toe</h1>
+      {/* Winner Popup */}
+      { winner &&
+        <div className='winner'>
+          <h2 className='winner-title'>{winner} is winner 🥳</h2>
+          <button className='winner-btn' onClick={handleContinueGame}>Continue</button>
+        </div>
+      }
       {/*Choose character popup*/}
       <div className={!player ? 'choose__character active' : 'choose__character'}>
         <h2 className='choose__character-title'>Choose your character</h2>
