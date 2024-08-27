@@ -46,6 +46,10 @@
 	cursor: pointer;
 }
 
+.choose__character-btn:active {
+	transform: scale(0.9);
+}
+
 /* Ranking Card */
 .ranking {
 	margin-top: 1rem;
@@ -93,4 +97,10 @@
 
 .restart__btn:active {
 	transform: scale(0.9);
+}
+
+/* Players legend */
+.players {
+	margin-top: 1rem;
+	color: var(--zinc-300);
 }
