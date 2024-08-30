@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import './App.css'
 import Head from './components/Head'
 import Board from './components/Board'
+import Button from './components/Button'
 
 const winningCombination = [
   [0, 1, 2], 
@@ -83,7 +84,7 @@ function App() {
       { winner &&
         <div className='winner'>
           <h2 className='winner-title'>{winner} is winner 🥳</h2>
-          <button className='winner-btn' onClick={handleContinueGame}>Continue</button>
+          <Button text='Continue' onClick={handleContinueGame}></Button>
         </div>
       }
       {/*Choose character popup*/}
@@ -99,9 +100,8 @@ function App() {
         </div>
       </div>
       <Head rankingX={ranking.x} rankingO={ranking.o}></Head>
-      {/*Board game*/}
       <Board data={board} turn={turn} onClick={handleClickBoard}></Board>
-      <button className='restart__btn' onClick={handleRestartBoard}>Restart Board</button>
+      <Button text='Restart Board' onClick={handleRestartBoard}></Button>
       { player &&
         <p className='players'>User is "{player}", CPU is "{player === 'x' ? 'o' : 'x'}"</p>
       }

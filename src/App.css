@@ -86,7 +86,7 @@
 }
 
 /* Restart button and continue button */
-.restart__btn, .winner-btn {
+.button {
 	margin-top: 1rem;
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
@@ -95,7 +95,7 @@
 	cursor: pointer;
 }
 
-.restart__btn:active, .winner-btn:active {
+.button:active {
 	transform: scale(0.9);
 }
 
