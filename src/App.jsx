@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react';
 import './App.css'
+import Head from './components/Head'
 
 const winningCombination = [
   [0, 1, 2], 
@@ -77,7 +78,6 @@ function App() {
 
   return (
     <div className='container'>
-      <h1 className='heading'>Tic Tac Toe</h1>
       {/* Winner Popup */}
       { winner &&
         <div className='winner'>
@@ -97,11 +97,7 @@ function App() {
           </button>
         </div>
       </div>
-      {/*Ranking card*/}
-      <div className='ranking'>
-        <span className='ranking-item'>X's Wins: {ranking.x}</span>
-        <span className='ranking-item'>O's Wins: {ranking.o}</span>
-      </div>
+      <Head rankingX={ranking.x} rankingO={ranking.o}></Head>
       {/*Turn*/}
       <p className='turn'>Turn: {turn}</p>
       {/*Board game*/}
