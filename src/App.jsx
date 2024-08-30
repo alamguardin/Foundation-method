@@ -4,6 +4,7 @@ import './App.css'
 import Head from './components/Head'
 import Board from './components/Board'
 import Button from './components/Button'
+import PlayersCard from './components/PlayersCard'
 
 const winningCombination = [
   [0, 1, 2], 
@@ -102,9 +103,7 @@ function App() {
       <Head rankingX={ranking.x} rankingO={ranking.o}></Head>
       <Board data={board} turn={turn} onClick={handleClickBoard}></Board>
       <Button text='Restart Board' onClick={handleRestartBoard}></Button>
-      { player &&
-        <p className='players'>User is "{player}", CPU is "{player === 'x' ? 'o' : 'x'}"</p>
-      }
+      <PlayersCard player={player}></PlayersCard>
     </div>
   )
 }
