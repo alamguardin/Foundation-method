@@ -6,6 +6,7 @@ import Board from './components/Board'
 import Button from './components/Button'
 import PlayersCard from './components/PlayersCard'
 import CharacterPopup from './components/CharacterPopup'
+import WinnerPopup from './components/WinnerPopup'
 
 const winningCombination = [
   [0, 1, 2], 
@@ -82,14 +83,7 @@ function App() {
 
   return (
     <div className='container'>
-      {/* Winner Popup */}
-      { winner &&
-        <div className='winner'>
-          <h2 className='winner-title'>{winner} is winner 🥳</h2>
-          <Button text='Continue' onClick={handleContinueGame}></Button>
-        </div>
-      }
-      {/*Choose character popup*/}
+      <WinnerPopup winner={winner} onClick={handleContinueGame}></WinnerPopup>
       <CharacterPopup player={player} onClick={handleChooseCharacter}></CharacterPopup>
       <Head rankingX={ranking.x} rankingO={ranking.o}></Head>
       <Board data={board} turn={turn} onClick={handleClickBoard}></Board>
